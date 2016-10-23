@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+    height: 100vh;
+}
+header{
+    margin: 0;
+    height: 20%;
+}
+#game_body{
+    margin: 0;
+    height: 80%;
+    background-color: #1DA1F2;
+}
+
