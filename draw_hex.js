@@ -51,4 +51,5 @@ function draw_row(hexes_in_row){
     }
 }
 
+//will draw one row of hexes
 draw_row(1);

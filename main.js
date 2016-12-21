@@ -1,7 +1,13 @@
 $(document).ready(function(){
-    initializeBoard();
+    //need to rename these functions initialize_board could be renamed initialize_game with other things going within it.
+        //also randomizeBoard is not a good name
+    //I need to finalize naming conventions of camelCase or underscores
+    randomizeBoard();
+    // initializeBoard();
+
 });
 
+//an object to hold the tile set
 var tileSet = {
     deserts : null,
     forests: null,
@@ -17,6 +23,7 @@ var tileSet = {
 //   mountains: 3
 }
 
+//initializes the tile set with the number of tiles of each specific type for a normal game of 3-4 players
 tileSet.initializeTiles = function(){
     this.deserts = 1;
     this.forests = 4;
@@ -26,6 +33,8 @@ tileSet.initializeTiles = function(){
     this.mountains = 3;
 }
 
+//tells the number of total tiles left for the game board
+    //may not be necessary
 tileSet.tilesLeft = function(){
     var tilesLeft = this.deserts
         + this.forests
@@ -44,7 +53,7 @@ function randomizeBoard(){
     tileSet.initializeTiles();
 //   console.log(tileSet.tilesLeft());
 
-//   fill tileArray with
+    //fill tileArray with tiles for the specific game type
     while(tileSet.deserts > 0){
         tileArray.push('desert');
         tileSet.deserts--;
@@ -70,6 +79,7 @@ function randomizeBoard(){
         tileSet.mountains--;
     }
 
+    //picks a random number from the
     while(tileArray.length > 0){
         var tileIndex = Math.floor(Math.random() * tileArray.length);
         randomTileArray.push(tileArray[tileIndex]);
@@ -84,7 +94,7 @@ function randomizeBoard(){
 
 // console.log(tileSet.tilesLeft());
 
-randomizeBoard();
+
 
 
 
@@ -116,7 +126,7 @@ function make_hex(center_x, center_y) {
 
     var gameArea = $('#game_body');
     // var g = $('#game_body');
-    var g = gameArea.getContext("2d");
+    // var g = gameArea.getContext("2d");
 
     g.beginPath();
     g.strokeStyle = 'black';
